@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+
+div#banner {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 250%;
+    font-weight: bolder;
+    color: #292321;
+    text-shadow: 0px 0px 6px #000;
+}
+
+div.loaders {
+    position: absolute;
+    height: 576px;
+    top: 12%;
+}
+
+ul#main_menu {
+    position: fixed;
+    left: -180px;
+    top: -5.7%;
+    height: 100%;
+    width: 200px;
+    padding: 3% 0%;
+    z-index: 2000;
+}
+
+ul#main_menu li {
+    position: relative;
+    text-align: right;
+    list-style-type: none;
+    margin: 1px;
+    background: #292421;
+    color: #C2B280;
+    text-shadow: 3px 3px 3px #000;
+    font-size: 150%;
+    opacity: .5;
+    padding: 10% 13%;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+ul#main_menu li:hover {
+    opacity: 1;
+    color: #8B864E;
+}
+
+ul.panels {
+    font-size: 110%;
+    line-height: 20px;
+    list-style: square;
+    position: absolute;
+    z-index: 1000;
+}
+
+ul#about {
+    padding: 5% 20% 5% 13%;
+}
+
+ul#features {
+    padding: 5% 5% 5% 12%;
+    display: none;
+}
+
+ul#about li, ul#features li, ul#howto li, ul#parameters li {
+    margin-left: 8%;
+    margin-top: .4%;
+}
+
+ul#howto {
+    padding: 5% 12%;
+    display: none;
+}
+
+ul#parameters {
+    padding: 2% 12%;
+    width: 75%;
+    display: none;
+}
+
+ul#parameters li table tr td {
+    padding: .5%;
+}
+
+h3.sec_heading {
+    color: #330000;
+}
+
+h3.sec_heading hr {
+    margin-top: 0px;
+    border: 1px solid #330000;
+}
+
+ul#tabbed_menu_items {
+    margin: 0px;
+}
+
+ul#tabbed_menu_items li {
+    position: absolute;
+    display: inline;
+    padding: .5% 4% .6% 4%;
+    font-weight: bold;
+    font-size: 110%;
+    box-shadow: 0px -2px 1px -2px #000;
+    background: #225659;
+    color: #adacac;
+    text-shadow: 1px 1px 0px #000;
+    margin-top: -.7%;
+    cursor: pointer;
+}
+
+ul#tabbed_menu_items li:hover {
+    color: #d9d3b8;
+    background: #223333;
+    text-shadow: 1px 1px 1px #000;
+}
+
+span.highlight {
+    color: #d9d3b8;
+}
+
+span.example {
+    color: #aaa;
+    margin-left: 5%;
+}
+
+span.heading {
+    font-weight: bold;
+    color: #330000;
+}
+
+span.note {
+    color: #300;
+    font-weight: bold;
+    font-size: 120%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+table.custom_menu, table.color_changer {
+    float: left;
+    height: 100%;
+}
+
+table.custom_menu tr td {
+    padding: 2.5% 3%;
+    font-weight: bold;
+    background: #223333;
+    color: #d9d3b8;
+    width: 33%;
+    cursor: pointer;
+}
+
+table.custom_menu tr td:hover {
+    color: #292421;
+    background: #8b8989;
+
+    text-shadow: 0px 0px 0px #000;
+
+}
+
+table.custom_menu tr td.choosen {
+    color: #292421;
+    background: #8b8989;
+    text-shadow: 0px 0px 0px #000;
+}
+
+table.color_changer tr td {
+    background: #223333;
+    padding: 2.5%;
+    color: #d9d3b8;
+    font-weight: bold;
+}
+
+table.color_changer tr td {
+    padding-left: 5%;
+}
+
+table.color_changer tr td input {
+    margin: -4px;
+    height: 90%;
+}
+
+table.color_changer tr td#config {
+    background: #330000;
+}
+
+table.color_changer tr td#config:hover {
+    background: #d9d3b8;
+    color: #333;
+    text-shadow: none;
+}
+
+table.color_changer tr td.first:hover {
+    cursor: pointer;
+    color: #292421;
+    background: #8b8989;
+    text-shadow: 0px 0px 0px #000;
+}

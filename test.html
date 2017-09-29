@@ -1,0 +1,526 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href="loader_css.css"/>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="loader_plugin.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Tahoma;
+            font-size: 74%;
+            margin: 0;
+            background: #5a6351;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div id="banner">LOADING ANIMATION</div>
+
+<ul id="main_menu">
+    <li target="home"> HOME</li>
+    <li target="fade"> FADE</li>
+    <li target="wave"> WAVE</li>
+    <li target="zoom"> ZOOM</li>
+    <li target="shrink"> SHRINK</li>
+    <li target="shake"> SHAKE</li>
+    <li target="hammer"> HAMMER</li>
+    <li target="bubbleZoom"> BUBBLE-ZOOM</li>
+    <li target="bubbleFade"> BUBBLE-FADE</li>
+    <li target="contact"> CONTACT</li>
+</ul>
+
+
+<div id="home" class="loaders">
+    <div id="tabbed_menu">
+        <ul id="tabbed_menu_items">
+            <li target="about" style="margin-left:6%; z-indEx:510"> ABOUT</li>
+            <li target="features" style="margin-left:17.4%;"> FEATURES</li>
+            <li target="howto" style="margin-left:30.3%;"> HOW TO USE</li>
+            <li target="parameters" style="margin-left:44.5%;"> PARAMETERS</li>
+        </ul>
+    </div>
+    <div id="background"
+         style="position:absolute; margin-top:1.5%; width:100%; background:#225659;box-shadow:0px 0px 8px -1px #000; height:97%; z-indEx:500;"></div>
+    <ul id="about" class="panels">
+        <h3 class="sec_heading">ABOUT :
+            <hr/>
+        </h3>
+        <li>This jQuery plugin has been developed to be used to represent ongoing process when the user clicks a link,
+            also called a loading animation. The plugin supports a variety of customisation for excellent presentation.
+            <br/>It does not use any image and hence is very light-weight. <br/>
+            <br/><br/>
+        <li><h4>Do check the demos by clicking on the menu on the left side before going through the features and how to
+            use section.</h4></li>
+        </li>
+    </ul>
+
+    <ul id="features" class="panels">
+        <h3 class="sec_heading">FEATURES :
+            <hr/>
+        </h3>
+        <li>Supports a <span class="highlight">variety of animation type </span> : fade, zoom, wave, shake, shrink,
+            hammer, bubbleFade, bubbleZoom.
+        </li>
+        <li>Supports a <span class="highlight">range of customisation </span> : bar size, color, shadow, speed, delay,
+            background transparency, background color etc.
+        </li>
+        <li>Very <span class="highlight">light wieght</span>. Does not use any image.</li>
+        <li>Supports <span class="highlight">multiple loaders on the same page.</span></li>
+        <li>Easily attachable to variety of elements.</li>
+        <li>Automatically positions itself to the center of the elements attached to.</li>
+        <li><span class="highlight">Very easy to use.</span></li>
+        <li><span class="highlight">Free of cost.</span></li>
+    </ul>
+
+    <ul id="howto" class="panels">
+        <h3 class="sec_heading"> HOW TO USE :
+            <hr/>
+        </h3>
+        <li>The parent element to contain the loader must have css position attribute set.</li>
+        <li>Call the plugin on the <span class="highlight">'id' of the element</span> you want to attach it to.
+            <br/><span class="example">  Ex:</span> $('elementA#element_id').Loading(); <br/> This attaches and runs the
+            fade animation on top of the elementA.
+        </li>
+
+        <li>To run a customised loader :
+            <br/><span class="example"> Ex:</span> $('elementA#element_id').Loading({parameter:value,
+            parameter:value[,....]});
+        </li>
+        <li>To stop the animation,<span class="highlight"> call the $.Loading.stopLoader() function and pass it the element whose animation you want to stop</span>.
+            <br/>
+            <span class="example"> Ex:</span> $.Loading.stopLoader($('elementA#element_id')); <br/>
+            This stops the currently running animation on elementA. <br/>
+            <span class="note">  NOTE : </span>Animation must already be attached prior to invoking
+            $.Loading.stopLoader() function.
+        </li>
+    </ul>
+
+    <ul id="parameters" class="panels">
+        <h3 class="sec_heading">CUSTOMISATION PARAMETERS :
+            <hr/>
+        </h3>
+
+        <li>Various parameters to customise the loader are :
+            <table width="100%" style="margin-left:4%;">
+                <tr>
+                    <td><span class="heading">height :</span> Any non negative value in pixels for bar height.</td>
+                    <td><span class="heading">width :</span> Any non negative value in pixels for bar width.</td>
+                </tr>
+                <tr>
+                    <td><span class="heading">barColor :</span> Any valid color format for color of bars.</td>
+                    <td><span class="heading">barShadow : </span>html box-shadow equivalent parameter.</td>
+                </tr>
+                <tr>
+                    <td><span class="heading">radius :</span> Radius for bars corners in pixels.</td>
+                    <td><span class="heading">spacing : </span>Spacing between the bars.</td>
+                </tr>
+                <tr>
+                    <td><span class="heading">backgroundColor :</span> The color of the background stage.</td>
+                    <td><span class="heading">backgroundOpacity :</span> Transparency of the background.</td>
+                </tr>
+                <tr>
+                    <td><span class="heading">population :</span> The total number of bars.</td>
+                    <td><span class="heading">delay :</span> The delay of animating the successive bars.</td>
+                </tr>
+                <tr>
+                    <td><span class="heading">fadeLow :</span> Lowest opacity during the animation.</td>
+                    <td><span class="heading">fadeHigh :</span> Maximum opacity during the animation.</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="heading">newHeight :</span> Maximum height during animation when using
+                        'zoom', 'wave', 'bubbleZoom' and 'shrink' loader_type.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="heading">newWidth :</span> Maximum width when using 'zoom' loader_type.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="heading">loader_type : </span>Type of animation you want : fade, zoom,
+                        wave, shrink, shake, bubbleZoom, bubbleFade amd hammer.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span class="heading">duration :</span> The duration of a complete cycle of
+                        animation of a single bar in milliseconds.
+                    </td>
+                </tr>
+
+            </table>
+
+        </li>
+        <li>These parameters can be adjusted independently to acheive beautiful animations. <br/>
+            <span class="example">Ex:</span> $('elementA#element_id').Loading({height:'5px', width:'5px', spacing:'1px',
+            population:50, loader_type:'wave', duration:200});
+            <br/> This will start wave loader with bar of size 5x5, spacing of 1px, total bars are 50 and duration of
+            animation on each bar is 200ms.
+        </li>
+    </ul>
+</div>
+
+
+<div id="fade" class="loaders">
+
+    <div class="animator" style="height:100%; width:100%; ">
+
+        <div class="animation_loader" style=" width:80%; height:40%; margin:auto;"></div>
+
+        <div class="customise" style="width:90%; height:60%;margin:0% auto;">
+
+            <div class="range" title="click on this bar to adjust value"
+                 style="position:relative; top:85%;left:28%; height:2px; width:500px; box-shadow:0px 0px 0px #000;cursor:pointer; background:#000;">
+                <div class="pointer" title="Click and move mouse to change value"
+                     style="position:relative; height:20px;width:5px; background:#000;top:-8px; cursor:pointer;"></div>
+                <div class="count" style="position:absolute;background:#fff;left:102%; top:-450%; padding:.5% 1.5%;">0
+                </div>
+            </div>
+            <div class="options" style="">
+                <div style=" margin-left:6%;padding:2%;">
+                    <span style="font-weight:bold; font-size:120%;">Customisation Panel :</span>
+                    <span>Select option then use the slider to adjust value</span>
+                </div>
+                <div style="width:65%; position:absolute; height:32%; left:50%; margin-left:-33%; box-shadow:0px 0px 12px -3px  #000; text-shadow:1px 1px 1px #000;">
+                    <table class="custom_menu" cellspacing="1" width="60%">
+                        <tr>
+                            <td target="height">height</td>
+                            <td target="width">width</td>
+                            <td target="radius">radius</td>
+                        </tr>
+                        <tr>
+                            <td target="spacing">spacing</td>
+                            <td target="population">population</td>
+                            <td target="fadeLow">fadeLow</td>
+                        </tr>
+                        <td target="fadeHigh">fadeHigh</td>
+                        <td target="backgroundOpacity">backgroundOpacity</td>
+                        <td target="newHeight">newHeight</td>
+                        </tr>
+                        <tr>
+                            <td target="newWidth">newWidth</td>
+                            <td target="delay">delay</td>
+                            <td target="duration">duration</td>
+                        </tr>
+
+
+                    </table>
+                    <table cellspacing="1" class="color_changer" width="40%">
+                        <tr>
+                            <td class="first" title="Enter a color value or name in the box on the right">barColor</td>
+                            <td><input type="text" name="barColor"
+                                       title=" Ex: #000 or #223333 or rgb(22,33,44) or red or rgba(22,22,22,0.5)  "/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="first" title="Enter value in 'box-shadow' format in the box on right">barShadow
+                            </td>
+                            <td><input type="text" name="barShadow"
+                                       title="Ex: 0px 0px 4px #000 or 2px 2px 4px -1px #000  "/></td>
+                        </tr>
+                        <tr>
+                            <td class="first" title="Enter a color value or name in the box on the right">
+                                backgroundColor
+                            </td>
+                            <td><input type="text" name="backgroundColor"
+                                       title=" Ex: #000 or #223333 or rgb(22,33,44) or red or rgba(22,22,22,0.5)  "/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" id="config" style="cursor:pointer"
+                                title="Get the current settings for this loader">Get Current Settings
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div id="wave" class="loaders"></div>
+<div id="zoom" class="loaders"></div>
+<div id="shrink" class="loaders"></div>
+<div id="shake" class="loaders"></div>
+<div id="hammer" class="loaders"></div>
+<div id="bubbleZoom" class="loaders"></div>
+<div id="bubbleFade" class="loaders"></div>
+
+
+<div id="contact" class="loaders">
+
+
+    <div style="padding:1% 15% ;">
+        <h2 align="center" style="margin-bottom:5%; color:#CCCC66; text-decoration:underline;">CONTACT US </h2>
+        <p>
+            Feel free to use this plugin on your websites. <br/>
+        </p>
+        <p>
+            Do write to us for further suggestions, comments or improvements. <br/>
+        </p>
+        <br/>
+        <h3>Contact Email : <span class="highlight">anugrah576@gmail.com</span></h3>
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function (e) {
+
+        var screen_size = screen.width;
+        var mouse_down = false; // for moving the pointer
+        var num_of_elements = 10; // no of menu items
+        var element_width = parseInt(screen_size / 100) * 100;
+        var element_offset = parseInt((3.3 * screen_size) / 100);
+        var selected_loader = ''; //loader_type
+        var loaders = new Array(); //to hold all the animations
+        var scale_limit = $('div.range', 'div#fade').width(); // the width of the range selector
+        /* scale variable holds the maximum value each parameter can reach */
+        var scale = {
+            height: 100,
+            width: 50,
+            radius: 50,
+            spacing: 20,
+            population: 100,
+            fadeLow: 1,
+            fadeHigh: 1,
+            newHeight: 100,
+            newWidth: 50,
+            delay: 400,
+            duration: 2000,
+            backgroundOpacity: 1
+        };
+        /* a class represnting all the loaders */
+        function loader(type) {
+            this.loader_type = type;
+            this.height = 10;
+            this.width = 10;
+            this.radius = 0;
+            this.spacing = 2;
+            this.population = 5;
+            this.fadeLow = .05;
+            this.fadeHigh = 1;
+            this.newHeight = 20;
+            this.newWidth = 20;
+            this.delay = 150;
+            this.duration = 300;
+            this.backgroundOpacity = 0.8;
+
+            this.barColor = '#039';
+            this.barShadow = '#0px 0px 0px #000';
+            this.backgroundColor = '#000';
+
+            this.pointer = ''; // to hold the pointer jquery element on this animation window
+            this.count = ''; // to hold the count jquery element on this animation window
+        }
+
+        $("html, body").animate({scrollLeft: 0}, 1200);	// when loaded move the window to the home page
+
+
+        $('ul#main_menu li').click(function (e) {
+            var target_window = $(this).attr('target');
+            var target_coordinates = $('#' + target_window).offset();
+            $("html, body").stop(true, true).animate({scrollLeft: target_coordinates.left - element_offset}, 1200);
+            if (target_window == 'home') {
+                selected_loader = null;
+                return false;
+            }
+            selected_loader = target_window; // store the selected loader
+        });
+
+        $('body').width(num_of_elements * screen_size + 200); // set width of document equal to the sum of size of each element
+
+        $('div.loaders').each(function (index, element) {
+            $element = $(element);//set the width and position of each holder
+            $element.css('width', element_width).css('left', index * screen_size + element_offset);
+            if (index == 0 || index == 1 || index == 9) {
+            }
+            else { /* copy the animation content on each loader window */
+                var $animation_content = $('div.animator', 'div#fade').clone(true, true);
+                $animation_content.appendTo($element);
+            }
+
+
+        });
+        $('div.loaders').each(function (index, element) {
+            $element = $(element);//set the width and position of each holder
+            if (index == 0 || index == 9) {
+            }
+            else {
+                var id = $element.attr('id');
+                loaders[id] = new loader(id);
+                /* create a new loader and store the selected loader */
+                loaders[id].pointer = $('div.animator div.customise div.range div.pointer', '#' + id);
+                loaders[id].count = $('div.animator div.customise div.range div.count', '#' + id);
+
+                $('#' + id + ' div.animation_loader').Loading({loader_type: id});
+                /* start the loader on the window*/
+            }
+        });
+
+        $('ul#main_menu').hover(function () {
+            $(this).stop(true, true);
+            $(this).animate({left: '-30px'}, 500);
+        }, function () {
+            $(this).animate({left: '-180px'}, 500);
+            /* in and out effect of the main menu */
+        });
+
+        $('ul#main_menu li').hover(function (e) {
+            $(this).stop(false, true);
+            $(this).animate({left: '10px', paddingTop: '12%'}, 10);
+        }, function (e) {
+            $(this).stop(false, true);
+            $(this).animate({left: '0px', paddingTop: '10%'}, 10);
+            /* effect on menu items */
+        });
+        $('ul#tabbed_menu_items li').click(function (e) { /* handle tabbed menu events */
+            $('ul#tabbed_menu_items li').css('z-index', 400);
+            $(this).css({'z-index': 510, 'background-color': '#225659'});
+            var target_holder = $(this).attr('target');
+            $('ul.panels').slideUp(0, function () {
+                $('#' + target_holder).slideDown(0);
+            });
+        });
+        $('div.range').click(function (e) {
+            var $pointer = $(this).find('div.pointer');
+            var $count = $(this).find('div.count');
+            var loc = e.offsetX;
+            update_scale($pointer, $count, loc);
+        });
+        $('div.pointer').click(function (e) {
+            e.stopImmediatePropagation();
+            mouse_down = !mouse_down;
+        });
+        $('div.customise').click(function (e) { /* if already clicked on the pointer then make it false*/
+            if (mouse_down == true) mouse_down = false;
+        });
+        $('div.customise').mousemove(function (e) {
+            var range = $(this).find('div.range').offset().left;
+            var $pointer = $(this).find('div.pointer');
+            var $count = $(this).find('div.count');
+            if (mouse_down) { /* adjust the pointer if the user has already selected it and is moving the mouse*/
+                var loc = (e.pageX - range) - 3;
+                if (loc >= 0 && loc <= scale_limit) {
+                    update_scale($pointer, $count, loc);
+                }
+                ;
+            }
+        });
+        /* handle the customisation menu events */
+        $('div.animator div.customise div.options table.custom_menu tr td').click(function (e) {
+            $(this).parent('tr').siblings('tr').find('td').removeClass('choosen');
+            /* remove class on sibliings of the current tr element*/
+            $(this).siblings('td').removeClass('choosen');
+            /* remove class on the siblings of the current td element*/
+            $(this).addClass('choosen');
+            var target = $(this).attr('target');
+            var scaled = (loaders[selected_loader][target] / scale[target]) * scale_limit;
+            /* calculate the position of the selected menu item on the range selector  */
+            loaders[selected_loader].count.text(loaders[selected_loader][target]);
+            loaders[selected_loader].pointer.css('left', scaled);
+
+        });
+
+        $('div.animator div.customise div.options table.color_changer tr td input').change(function (e) {
+            var changed = $(this).attr('name');
+            var value = $(this).val();
+            if (value == '') {
+            }
+            else {
+                loaders[selected_loader][changed] = value;
+                launch_loader();
+            }
+        });
+        $('div.animator div.customise div.options table.color_changer tr td#config').click(function (e) {
+
+            var str = '';
+            str += 'height:' + loaders[selected_loader].height;
+            str += ', width:' + loaders[selected_loader].width;
+            str += ', radius:' + loaders[selected_loader].radius;
+            str += ', spacing:' + loaders[selected_loader].spacing;
+            str += ', population:' + loaders[selected_loader].population;
+            str += ', fadeLow:' + loaders[selected_loader].fadeLow;
+            str += ', fadeHigh:' + loaders[selected_loader].fadeHigh;
+            str += ', newHeight:' + loaders[selected_loader].newHeight;
+            str += ', newWidth:' + loaders[selected_loader].newWidth;
+            str += ', backgroundOpacity:' + loaders[selected_loader].backgroundOpacity;
+            str += ', delay:' + loaders[selected_loader].delay;
+            str += ', duration:' + loaders[selected_loader].duration;
+            str += ', barColor:' + loaders[selected_loader].barColor;
+            str += ', barShadow:' + loaders[selected_loader].barShadow;
+            str += ', backgroundColor:' + loaders[selected_loader].backgroundColor;
+
+
+            alert(str);
+        });
+        $('table.custom_menu tr td').attr('title', 'Select and adjust the slider to change value');
+        $('table.color_changer tr td.first').click(function (e) {
+            $(this).next('td').find('input:text').focus();
+        });
+        function update_scale($pointer, $count, loc) {
+
+            var changed = $('#' + selected_loader + ' div.animator div.customise div.options table.custom_menu tr').find('td.choosen').attr('target');
+            if (changed == undefined) {
+                alert('Please select an option to adjust value');
+                mouse_down = false;
+                return false;
+            }
+            var temp = '';
+            $pointer.css('left', loc);
+            if (changed == 'fadeLow' || changed == 'fadeHigh' || changed == 'backgroundOpacity')
+                temp = (loc / scale_limit) * scale[changed];
+            /* change the range selector value to the acceptable scale of the selected menu item*/
+            else
+                temp = parseInt((loc / scale_limit) * scale[changed]);
+            $count.text(temp);
+
+            loaders[selected_loader][changed] = temp;
+
+            launch_loader();
+        }
+
+        function launch_loader() {
+
+            $.Loading.stopLoader($('div#' + selected_loader + ' div.animation_loader'));
+            $('div.animation_loader', '#' + selected_loader).empty();
+            $('div#' + selected_loader + ' div.animation_loader').Loading({
+
+                height: loaders[selected_loader].height,
+                width: loaders[selected_loader].width,
+                radius: loaders[selected_loader].radius,
+                spacing: loaders[selected_loader].spacing,
+                population: loaders[selected_loader].population,
+                fadeLow: loaders[selected_loader].fadeLow,
+                fadeHigh: loaders[selected_loader].fadeHigh,
+                newHeight: loaders[selected_loader].newHeight,
+                newWidth: loaders[selected_loader].newWidth,
+                delay: loaders[selected_loader].delay,
+                duration: loaders[selected_loader].duration,
+                backgroundOpacity: loaders[selected_loader].backgroundOpacity,
+
+                barColor: loaders[selected_loader].barColor,
+                barShadow: loaders[selected_loader].barShadow,
+                backgroundColor: loaders[selected_loader].backgroundColor,
+
+                loader_type: loaders[selected_loader].loader_type
+            });
+
+
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>
